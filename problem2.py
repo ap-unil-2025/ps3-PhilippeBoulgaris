@@ -6,32 +6,25 @@ Convert between Celsius and Fahrenheit temperatures.
 def celsius_to_fahrenheit(celsius):
     """
     Convert Celsius to Fahrenheit.
-    Formula: F = (C × 9/5) + 32
-
+    Formula: F = (C * 9/5) + 32
     Args:
         celsius (float): Temperature in Celsius
-
     Returns:
         float: Temperature in Fahrenheit
     """
-    # TODO: Implement this function
-    pass
+    return (celsius * 9/5) + 32
 
 
 def fahrenheit_to_celsius(fahrenheit):
     """
     Convert Fahrenheit to Celsius.
-    Formula: C = (F - 32) × 5/9
-
+    Formula: C = (F - 32) * 5/9
     Args:
         fahrenheit (float): Temperature in Fahrenheit
-
     Returns:
         float: Temperature in Celsius
     """
-    # TODO: Implement this function
-    pass
-
+    return (fahrenheit - 32) * 5/9
 
 def temperature_converter():
     """
@@ -43,6 +36,25 @@ def temperature_converter():
     """
     print("Temperature Converter")
     print("-" * 30)
+    valeur = float(input("Temperature?"))
+    unit = input("C of F")
+    
+   
+    # Demander la température
+    value = float(input("Enter the temperature value: "))
+
+    # Demander l'unité
+    unit = input("Is this in Celsius or Fahrenheit? (C/F): ").strip().upper()
+
+    # Conversion selon l'unité
+    if unit == "C":
+        result = celsius_to_fahrenheit(value)
+        print(f"{value:.2f}°C = {result:.2f}°F")
+    elif unit == "F":
+        result = fahrenheit_to_celsius(value)
+        print(f"{value:.2f}°F = {result:.2f}°C")
+    else:
+        print("Invalid unit! Please enter C or F.")
 
     # TODO: Implement the interactive converter
     # Remember to:
